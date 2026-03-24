@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Girl Trapped on Mars</title>
+  <meta
+    name="description"
+    content="The Woman Stuck on Mars — official landing page, pitch deck, crew, and fundraising."
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- OVERLAY -->
+  <div class="overlay" id="enterOverlay" aria-hidden="false">
+    <div class="overlay__bg" aria-hidden="true"></div>
+
+    <div
+      class="overlay__card overlay__card--report"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Mission report"
+    >
+      <div class="badge">MISSION UPLINK</div>
+      <h1 class="overlay__title">THE GIRL TRAPPED ON MARS</h1>
+
+      <div class="report" aria-live="polite">
+        <p class="report__line mono" data-report>INITIALIZING TRANSMISSION…</p>
+        <p class="report__line mono ok" data-report>SIGNAL: STABLE</p>
+        <p class="report__line mono" data-report>FILE: GIRL_TRAPPED_ON_MARS // ACCESS: GRANTED</p>
+        <p class="report__line mono warn" data-report>STATUS: STORY-INBOUND — IMAGINATION AS SURVIVAL MECHANISM</p>
+        <p class="report__line mono critical" data-report>OBJECTIVE: PRESS ENTER TO PROCEED</p>
+      </div>
+
+      <div class="audio-status" role="status" aria-live="polite">
+        <span class="mono muted">AUDIO:</span>
+        <span class="mono" id="audioState">CONNECTING…</span>
+        <span class="mono muted" id="audioHint" style="display:none;">(click anywhere to enable)</span>
+      </div>
+
+      <div class="overlay__actions">
+        <button class="btn btn--primary" id="enterButton" type="button">
+          Press Enter to Continue
+        </button>
+        <p class="overlay__subtitle">
+          Press <span class="kbd">Enter</span> or click the button to launch.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <header class="nav-wrap" id="top">
+    <nav class="nav">
+      <a class="brand" href="#top" aria-label="Back to top">
+        <span class="brand__mark"></span>
+        <span class="brand__text">The Girl Trapped on Mars</span>
+      </a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav__links" id="navLinks">
+        <a class="nav__link" href="#welcome">Welcome</a>
+        <a class="nav__link" href="#about">About</a>
+        <a class="nav__link" href="#pitch">Pitch Deck</a>
+        <a class="nav__link" href="#crew">Crew</a>
+        <a class="nav__link" href="#fundraising">Fundraising</a>
+      </div>
+
+      <button class="btn btn--tiny" id="muteToggle" type="button" aria-pressed="false">
+        🔊 Sound
+      </button>
+    </nav>
+  </header>
+
+  <main class="page">
+    <!-- HERO -->
+    <section class="section hero" id="welcome">
+      <div class="container grid-2">
+        <div class="stack">
+          <p class="eyebrow">A short film experience</p>
+          <h2 class="h1">
+            A survival story told through
+            <span class="glow">space-born imagination</span>.
+          </h2>
+          <p class="lead">
+            The Girl Trapped on Mars blends grounded emotion with a futuristic visual language,
+            inviting audiences into a world where escape is built from cardboard, starlight, and will.
+          </p>
+
+          <!-- <div class="cta-row">
+            <a class="btn btn--primary" href="#fundraising">Support the Film</a>
+            <button class="btn btn--ghost" id="openPitchDeck" type="button">View Pitch Deck</button>
+          </div> -->
+
+          <div class="meta">
+            <div class="meta__item">
+              <span class="meta__label">Format</span>
+              <span class="meta__value">Short Film</span>
+            </div>
+            <div class="meta__item">
+              <span class="meta__label">Genre</span>
+              <span class="meta__value">Fantasy Drama</span>
+            </div>
+            <div class="meta__item">
+              <span class="meta__label">Themes</span>
+              <span class="meta__value">Imagination • Trauma • Escape</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-card__top">
+            <div class="signal"></div>
+            <div class="signal"></div>
+            <div class="signal"></div>
+            <span class="chip">TRANSMISSION</span>
+          </div>
+          <div class="hero-card__content">
+            <p class="mono">INCOMING:</p>
+            <p class="hero-card__quote">
+              “Some Worlds are Built…<br />
+              to Survive Others.”
+            </p>
+            <div class="hero-card__bar" aria-hidden="true"></div>
+            <!-- <p class="small muted">
+              Replace this with your logline, director’s note, or campaign message.
+            </p> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head">
+          <h3 class="h2">About the Film </h3>
+          <!-- <p class="subhead">
+            What it’s about, what it says, and why it needs to exist right now.
+          </p> -->
+        </div>
+
+        <div class="cards grid-3">
+          <article class="card">
+            <h4>Logline</h4>
+            <p>
+              A young boy uses a space-themed world to survive life on Earth, where danger lives at home and hope sounds like an AI companion in his helmet.
+            </p>
+          </article>
+
+          <article class="card">
+            <h4>Why It Matters</h4>
+            <p>
+              This film explores how imagination becomes a life raft for children without turning trauma into spectacle.
+            </p>
+          </article>
+
+          <article class="card">
+            <h4>Visual Language</h4>
+            <p>
+              Minimal sets, bold light, and a cinematic contrast between domestic realism and imagined outer space.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PITCH -->
+    <section class="section" id="pitch">
+      <div class="container">
+        <div class="section-head">
+          <h3 class="h2">Pitch Deck</h3>
+        </div>
+
+        <div class="deck deck--single">
+          <div class="deck__left">
+            <p class="lead">
+              Explore the world, tone, characters, visual language, and creative intentions behind
+              <em>The Girl Trapped on Mars</em> through the full deck presentation.
+            </p>
+            <div class="cta-row">
+              <button class="btn btn--primary" id="openPitchDeck2" type="button">Open Pitch Deck</button>
+            </div>
+            <!-- <p class="small muted">Use ← / → to move through the deck. Press Esc to close.</p> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREW -->
+    <section class="section" id="crew">
+      <div class="container">
+        <div class="section-head">
+          <h3 class="h2">Key Crew</h3>
+          <!-- <p class="subhead">Scroll horizontally to explore the team.</p> -->
+        </div>
+
+        <div class="crew-controls">
+          <button class="btn btn--tiny" type="button" data-crew-nav="prev" aria-label="Scroll crew left">←</button>
+          <!-- <p class="crew-hint mono muted">Drag / trackpad scroll →</p> -->
+          <button class="btn btn--tiny" type="button" data-crew-nav="next" aria-label="Scroll crew right">→</button>
+        </div>
+
+        <div class="crew-rail" id="crewRail" tabindex="0" aria-label="Crew slider">
+          <article class="crew-card">
+            <div class="crew-card__top">
+              <div class="crew-headshot"><img src="images/crew/director.jpg" alt="Director headshot" loading="lazy" /></div>
+              <div>
+                <h4 class="crew-role">Director / Writer</h4>
+                <p class="crew-name muted"></p>
+              </div>
+            </div>
+            <p class="crew-bio small">Vision, tone, and emotional truth.</p>
+          </article>
+
+          <article class="crew-card">
+            <div class="crew-card__top">
+              <div class="crew-headshot"><img src="images/crew/producer.jpg" alt="Producer headshot" loading="lazy" /></div>
+              <div>
+                <h4 class="crew-role">Producer</h4>
+                <p class="crew-name muted"></p>
+              </div>
+            </div>
+            <p class="crew-bio small">Execution, logistics, and production leadership.</p>
+          </article>
+
+          <article class="crew-card">
+            <div class="crew-card__top">
+              <div class="crew-headshot"><img src="images/crew/dp.jpg" alt="Director of Photography headshot" loading="lazy" /></div>
+              <div>
+                <h4 class="crew-role">Director of Photography</h4>
+                <p class="crew-name muted"></p>
+              </div>
+            </div>
+            <p class="crew-bio small">Lighting and camera language.</p>
+          </article>
+
+          <article class="crew-card">
+            <div class="crew-card__top">
+              <div class="crew-headshot"><img src="images/crew/production-designer.jpg" alt="Production Designer headshot" loading="lazy" /></div>
+              <div>
+                <h4 class="crew-role">Production Designer</h4>
+                <p class="crew-name muted">Name</p>
+              </div>
+            </div>
+            <p class="crew-bio small">Builds the physical world of Mars.</p>
+          </article>
+
+          <article class="crew-card">
+            <div class="crew-card__top">
+              <div class="crew-headshot"><img src="images/crew/editor.jpg" alt="Editor headshot" loading="lazy" /></div>
+              <div>
+                <h4 class="crew-role">Editor</h4>
+                <p class="crew-name muted">Name</p>
+              </div>
+            </div>
+            <p class="crew-bio small">Shapes pacing between fantasy and reality.</p>
+          </article>
+
+          <article class="crew-card">
+            <div class="crew-card__top">
+              <div class="crew-headshot"><img src="images/crew/sound-designer.jpg" alt="Sound Designer headshot" loading="lazy" /></div>
+              <div>
+                <h4 class="crew-role">Sound Designer</h4>
+                <p class="crew-name muted">Scott Liu</p>
+              </div>
+            </div>
+            <p class="crew-bio small">Creates the sonic “helmet world.”</p>
+          </article>
+
+          <article class="crew-card">
+            <div class="crew-card__top">
+              <div class="crew-headshot"><img src="images/crew/costume-designer.jpg" alt="Costume Designer headshot" loading="lazy" /></div>
+              <div>
+                <h4 class="crew-role">Costume Designer</h4>
+                <p class="crew-name muted">Name</p>
+              </div>
+            </div>
+            <p class="crew-bio small">Wardrobe as story and survival.</p>
+          </article>
+
+          <article class="crew-card">
+            <div class="crew-card__top">
+              <div class="crew-headshot"><img src="images/crew/composer.jpg" alt="Composer headshot" loading="lazy" /></div>
+              <div>
+                <h4 class="crew-role">Composer</h4>
+                <p class="crew-name muted">Name</p>
+              </div>
+            </div>
+            <p class="crew-bio small">Cinematic score bridging wonder and dread.</p>
+          </article>
+        </div>
+
+        <!-- <p class="small muted crew-note">
+          Headshots display at a constant 48×48 size. Recommended source image size: 300×300 or larger.
+        </p> -->
+      </div>
+    </section>
+
+    <!-- FUNDRAISING -->
+    <section class="section" id="fundraising">
+      <div class="container">
+        <div class="section-head">
+          <h3 class="h2">Fundraising</h3>
+          <p class="subhead">Goal: <strong>$35,000</strong></p>
+        </div>
+
+        <div class="fund grid-2">
+          <div class="card">
+            <h4>Why We’re Fundraising</h4>
+            <p>
+              <em>The Girl Trapped on Mars</em> is a fantasy sci-fi short film that requires a much larger visual and production scope than a typical contained short. We are raising funds to help bring that world to life with the care, detail, and cinematic quality the story deserves.
+            </p>
+            <p>
+              A major part of our budget will go toward <strong>location and travel expenses</strong>. We plan to shoot on location in <strong>Utah</strong>, which means transporting cast, equipment, wardrobe, props, and essential production materials out of state. Travel, lodging, meals, and the overall logistics of moving a production to a remote location add significantly to the cost, but they are necessary to achieve the scale and landscape this story needs.
+            </p>
+            <p>
+              We are also raising funds to support <strong>cast compensation, rental equipment, production design, and costumes</strong>. Because this is a fantasy sci-fi short film, the visual details matter deeply. The world of the film has to feel imaginative, emotionally grounded, and fully realized. That means investing in strong design elements, wardrobe, props, and the right equipment package to capture the film in a cinematic way.
+            </p>
+            <p>
+              Another major area of need is <strong>post-production</strong>, especially because the film includes <strong>heavy visual effects</strong>. VFX will play an essential role in shaping the imagined world of the film, and we want to make sure those elements feel seamless, polished, and emotionally connected to the story rather than simply decorative.
+            </p>
+            <p>
+              Lastly, we are raising funds for <strong>exposure and our festival run</strong>. Once the film is completed, we want to position it for the strongest life possible through submissions, deliverables, and outreach so it can reach audiences, open doors, and continue building momentum beyond production.
+            </p>
+          </div>
+
+          <div class="card card--glow">
+            <h4>Support the Mission</h4>
+            <p>
+              Every contribution helps us move closer to creating a visually ambitious, emotionally powerful short film that blends grounded storytelling with fantasy and science fiction in a meaningful way.
+            </p>
+
+            <div class="cta-row">
+              <a
+                class="btn btn--primary"
+                href="https://seedandspark.com/fund/the-girl-trapped-on-mars#story"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Donate
+              </a>
+              <button
+                class="btn btn--ghost"
+                id="copyFundLink"
+                type="button"
+                data-link="https://seedandspark.com/fund/the-girl-trapped-on-mars#story"
+              >
+                Copy Link
+              </button>
+            </div>
+
+            <div class="progress">
+              <div class="progress__label">
+                <span class="mono">FUNDING STATUS</span>
+                <span class="mono muted" id="fundText">$0 / $35,000</span>
+              </div>
+              <div class="progress__bar" aria-hidden="true">
+                <div class="progress__fill" id="fundFill" style="width: 0%"></div>
+              </div>
+              <p class="small muted">Update the raised amount in the code and the bar will move automatically.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINALE -->
+    <section class="section finale" id="finale">
+      <div class="container">
+        <div class="finale-card">
+          <h3 class="h2">End Transmission</h3>
+          <p class="lead">
+            Thank you for visiting. If this story resonates, please share the campaign.
+          </p>
+
+          <!-- <div class="cta-row">
+            <a class="btn btn--primary" href="#top">Back to Top</a>
+            <button class="btn btn--ghost" id="closePage" type="button">Close Page</button>
+          </div> -->
+
+          <p class="small muted" id="closeMsg" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="small muted">© <span id="year"></span> The Girl Trapped on Mars • All rights reserved</p>
+      <div class="footer__links">
+        <a href="#fundraising">Support</a>
+        <a href="#pitch">Pitch Deck</a>
+        <a href="#crew">Crew</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SLIDESHOW MODAL -->
+  <div class="modal" id="deckModal" aria-hidden="true">
+    <div class="modal__backdrop" data-close="true"></div>
+
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-label="Pitch deck slideshow">
+      <div class="modal__top">
+        <span class="mono muted">PITCH_DECK_SLIDES</span>
+        <div class="modal__actions">
+          <button class="icon-btn" id="prevPage" type="button" aria-label="Previous slide">←</button>
+          <button class="icon-btn" id="nextPage" type="button" aria-label="Next slide">→</button>
+          <button class="icon-btn" id="closeModal" type="button" aria-label="Close slideshow">✕</button>
+        </div>
+      </div>
+
+      <div class="modal__body modal__body--slides">
+        <img id="slideImage" src="images/pitch/1.png" alt="Pitch Deck Slide 1" />
+      </div>
+
+      <div class="modal__bottom">
+        <span class="mono muted" id="pageCounter">1 / 18</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- AUDIO -->
+  <audio id="introMusic" preload="auto">
+    <source src="audio/audioblocks-facing-fears-cello-and-piano_BCqjc0LQ6-SBA-348637166.wav" type="audio/mpeg" />
+    <source src="audio/intro-score.ogg" type="audio/ogg" />
+  </audio>
+
+  <audio id="beepSound" preload="auto">
+    <source src="audio/mouse-click-hard-SBA-300286154.wav" type="audio/mpeg" />
+    <source src="audio/beep.ogg" type="audio/ogg" />
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
