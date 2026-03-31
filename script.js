@@ -60,15 +60,9 @@ function clearRestartTimer() {
   }
 }
 
+// no restart needed
 function scheduleRestartAfterDelay() {
-  clearRestartTimer();
-  restartTimer = setTimeout(() => {
-    if (!introMusic || muted) return;
-    introMusic.currentTime = 0;
-    introMusic.play()
-      .then(() => setAudioUI("PLAYING"))
-      .catch(() => setAudioUI("AUDIO LOCKED", true));
-  }, 10000);
+  // intentionally empty
 }
 
 function attachAudioHandlers() {
@@ -77,11 +71,9 @@ function attachAudioHandlers() {
   introMusic.loop = false;
   introMusic.volume = 0.75;
 
-  introMusic.addEventListener("ended", () => {
-    if (muted) return;
-    setAudioUI("RESTARTING IN 10s");
-    scheduleRestartAfterDelay();
-  });
+introMusic.addEventListener("ended", () => {
+  setAudioUI("COMPLETE");
+});
 
   introMusic.addEventListener("play", () => {
     musicStarted = true;
