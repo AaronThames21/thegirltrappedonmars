@@ -469,7 +469,7 @@ a {
 
 crew-card {
   scroll-snap-align: start;
-  border-radius: 18px;
+  border-radius: 1px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: rgba(255, 255, 255, 0.04);
   padding: 18px 16px;
@@ -517,7 +517,7 @@ crew-card {
 .crew-headshot {
   width: 110px;
   height: 110px;
-  border-radius: 20px;
+  border-radius: 0px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.15);
 
