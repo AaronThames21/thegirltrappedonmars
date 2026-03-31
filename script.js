@@ -177,15 +177,17 @@ async function typeLine(el, text, speed = 18) {
 }
 
 async function runMissionReport() {
+  const report = document.querySelector(".report");
   const lines = $$("[data-report]");
   if (!lines.length) return;
 
-  const original = lines.map((el) => el.textContent.trim());
-  lines.forEach((el) => (el.textContent = ""));
+  const original = lines.map((el) => el.dataset.text || "");
+
+  report?.classList.add("is-ready");
 
   for (let i = 0; i < lines.length; i++) {
     playBeep();
-    const speed = i === 0 ? 22 : i === lines.length - 1 ? 14 : 16;
+    const speed = i === 0 ? 22 : (i === lines.length - 1 ? 14 : 16);
     await typeLine(lines[i], original[i], speed);
     await new Promise((r) => setTimeout(r, 140));
   }
