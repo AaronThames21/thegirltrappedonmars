@@ -71,9 +71,9 @@ function attachAudioHandlers() {
   introMusic.loop = false;
   introMusic.volume = 0.75;
 
-introMusic.addEventListener("ended", () => {
-  setAudioUI("COMPLETE");
-});
+  introMusic.addEventListener("ended", () => {
+    setAudioUI("COMPLETE");
+  });
 
   introMusic.addEventListener("play", () => {
     musicStarted = true;
@@ -185,7 +185,7 @@ async function runMissionReport() {
 
   for (let i = 0; i < lines.length; i++) {
     playBeep();
-    const speed = i === 0 ? 22 : (i === lines.length - 1 ? 14 : 16);
+    const speed = i === 0 ? 22 : i === lines.length - 1 ? 14 : 16;
     await typeLine(lines[i], original[i], speed);
     await new Promise((r) => setTimeout(r, 140));
   }
